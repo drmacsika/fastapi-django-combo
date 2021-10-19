@@ -25,9 +25,8 @@ def get_application() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    # Make a generic api versioning 
-    app.include_router(blog_router, prefix="/api") 
-    app.mount("/django", WSGIMiddleware(application))
+    app.include_router(blog_router, prefix=settings.API_V1_STR, tags=["Blog"]) 
+    app.mount("/web", WSGIMiddleware(application))
     return app
 
 
