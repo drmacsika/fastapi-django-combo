@@ -3,6 +3,7 @@ asgiref==3.4.1
 certifi==2021.10.8
 cffi==1.15.0
 charset-normalizer==2.0.7
+click==8.0.3
 cryptography==35.0.0
 defusedxml==0.7.1
 dj-rest-auth==2.1.11
@@ -12,6 +13,7 @@ django-cors-headers==3.10.0
 djangorestframework==3.12.4
 djangorestframework-simplejwt==5.0.0
 fastapi==0.70.0
+h11==0.12.0
 idna==3.3
 oauthlib==3.1.1
 pycparser==2.20
@@ -26,3 +28,4 @@ sqlparse==0.4.2
 starlette==0.16.0
 typing-extensions==3.10.0.2
 urllib3==1.26.7
+uvicorn==0.15.0
