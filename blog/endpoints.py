@@ -2,21 +2,20 @@ from typing import List
 
 from fastapi import APIRouter
 
-from api import models, schemas
-
+from blog import models, schemas
 
 api_router = APIRouter()
 
 
-@api_router.post("/items", response_model=schemas.Item)
-def create_item(item: schemas.ItemCreate):
-    item = models.Item.objects.create(**item.dict())
+@api_router.post("/posts", response_model=schemas.Post)
+def create_post(post: schemas.PostCreate):
+    post = models.Post.objects.create(**post.dict())
 
-    return item
+    return post
 
 
-@api_router.get("/items", response_model=List[schemas.Item])
-def read_items():
-    items = list(models.Item.objects.all())
+@api_router.get("/posts", response_model=List[schemas.Post])
+def read_posts():
+    posts = list(models.Post.objects.all())
 
-    return items
+    return posts

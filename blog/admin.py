@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from blog.models import Item
+from blog.models import Post
 
 
-@admin.register(Item)
-class ItemAdmin(admin.ModelAdmin):
+@admin.register(Post)
+class Postadmin(admin.ModelAdmin):
     list_display = ("id", "title")
