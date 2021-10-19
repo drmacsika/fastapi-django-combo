@@ -1,16 +1,19 @@
 import os
 
-from blog.endpoints import blog_router
 from django.apps import apps
 from django.conf import settings
-from django.core.asgi import get_asgi_application
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.wsgi import WSGIMiddleware
+from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 apps.populate(settings.INSTALLED_APPS)
-application = get_asgi_application()
+
+
+from blog.endpoints import blog_router
+from fastapi import FastAPI
+from fastapi.middleware.wsgi import WSGIMiddleware
+from starlette.middleware.cors import CORSMiddleware
+
+application = get_wsgi_application()
 
 
 def get_application() -> FastAPI:
