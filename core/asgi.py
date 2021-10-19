@@ -47,10 +47,7 @@ def get_application() -> FastAPI:
             )
         ),
         name='static',
-    )
-    
-    
-    # app.mount("/static", StaticFiles(directory="static"), name="static")
+    )    
     return app
 
 
