@@ -1,8 +1,6 @@
 from typing import Generic, List, Optional, Type, TypeVar
 
-from blog.models import Category, Post
-from django.db.models import Model, query
-from django.db.models.query import Prefetch
+from django.db.models import Model
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
 
@@ -10,7 +8,6 @@ ModelType = TypeVar("ModelType", bound=Model)
 CreateSchema = TypeVar("CreateSchema", bound=BaseModel)
 UpdateSchema = TypeVar("UpdateSchema", bound=BaseModel)
 SLUGTYPE = TypeVar("SLUGTYPE", "int", "str")
-
 
 
 class BaseCRUD(Generic[ModelType, CreateSchema, UpdateSchema, SLUGTYPE]):
