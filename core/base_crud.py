@@ -24,7 +24,7 @@ class BaseCRUD(Generic[ModelType, CreateSchema, UpdateSchema, SLUGTYPE]):
         """
         return self.model.objects.get(slug=slug)
     
-    def get_multiple(self, limit=100, offset=0) -> List[ModelType]:
+    def get_multiple(self, limit:int = 100, offset:int = 0) -> List[ModelType]:
         """
         get multiple items using a query limiting flag.
         """
