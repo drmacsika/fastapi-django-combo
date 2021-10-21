@@ -28,7 +28,7 @@ class BaseCRUD(Generic[ModelType, CreateSchema, UpdateSchema, SLUGTYPE]):
         """
         get multiple items using a query limiting flag.
         """
-        return self.model.objects.all()[offset:offset+limit]
+        return self.model.objects.all()
     
     def create(self, obj_in: CreateSchema) -> ModelType:
         """
