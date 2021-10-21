@@ -30,6 +30,9 @@ class PostManager(models.Manager):
 
     def all(self):
         return self.get_queryset()
+    
+    def all_with_category(self):
+        ...
 
     def active(self, *args, **kwargs):
         return super(PostManager, self).filter(draft=False).filter(

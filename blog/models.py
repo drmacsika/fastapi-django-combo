@@ -37,7 +37,7 @@ class Category(models.Model):
     class Meta:
         constraints: List[Any] = [
             models.UniqueConstraint(
-                fields=['parent', 'slug'],
+                fields=['title', 'slug'],
                 name='unique_blog_category'
             ),
         ]
@@ -60,10 +60,10 @@ class Post(models.Model):
         on_delete=models.CASCADE,
         related_name="posts"
     )
-    category: Union[str, list] = models.ManyToManyField(Category)
+    category = models.ManyToManyField(Category)
     title: str = models.CharField(max_length=250)
     description: str = models.TextField(null=True, blank=True)
-    content: str = models.TextField()
+    content: str = models.TextField(default="Create a post.")
     slug: str = models.SlugField(unique=True, blank=True)
     thumbnail: Union[AnyUrl, str] = models.FileField(
         upload_to=upload_image_path, 
