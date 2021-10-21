@@ -7,7 +7,7 @@ from django.db import models
 from django.urls import reverse
 from pydantic import AnyUrl
 
-from blog.manager import CategoryManager, PostManager
+from blog.manager import CategoryManager
 
 
 def upload_image_path(
@@ -60,7 +60,7 @@ class Post(models.Model):
         on_delete=models.CASCADE,
         related_name="posts"
     )
-    category = models.ManyToManyField(Category)
+    category: Union[str, int, list] = models.ManyToManyField(Category)
     title: str = models.CharField(max_length=250)
     description: str = models.TextField(null=True, blank=True)
     content: str = models.TextField(default="Create a post.")
@@ -76,7 +76,7 @@ class Post(models.Model):
     updated: datetime = models.DateTimeField(auto_now=True, auto_now_add=False)
     created_on: datetime = models.DateTimeField(auto_now=False, auto_now_add=True)
     
-    objects: PostManager = PostManager()
+    # objects: PostManager = PostManager()
     
     class Meta:
         verbose_name: str = "post"
