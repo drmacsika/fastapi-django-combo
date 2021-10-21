@@ -1,11 +1,8 @@
-
 import math
 import random
 import re
 import string
 import unicodedata
-
-from fastapi import Depends, HTTPException
 
 
 def random_string(size: int, chars: str = string.ascii_lowercase+string.digits) -> str:
