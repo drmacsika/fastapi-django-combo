@@ -31,7 +31,7 @@ class Category(models.Model):
     slug: str = models.SlugField(unique=True, blank=True)
     parent: Union[str, int, list] = models.ForeignKey(
         'self', 
-        blank=True, null=True, 
+        null=True, default=1,
         related_name='tags', 
         on_delete=models.SET_NULL
     )
