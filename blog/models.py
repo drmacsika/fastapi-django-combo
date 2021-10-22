@@ -6,7 +6,7 @@ from django.conf import settings
 from django.db import models
 from django.db.models.deletion import SET_NULL
 from django.urls import reverse
-from pydantic import AnyUrl
+from pydantic import AnyUrl, BaseModel, ValidationError, validator
 
 from blog.manager import CategoryManager
 
@@ -33,7 +33,7 @@ class Category(models.Model):
         'self', 
         null=True, default=1,
         related_name='tags', 
-        on_delete=models.SET_NULL
+        on_delete=models.SET_DEFAULT
     )
     active: bool = models.BooleanField(default=False)
     updated: datetime = models.DateTimeField(auto_now=True, auto_now_add=False)
@@ -65,10 +65,15 @@ class Post(models.Model):
         settings.AUTH_USER_MODEL,
         default=1,
         null=True,
-        on_delete=models.SET_NULL,
+        on_delete=models.SET_DEFAULT,
         related_name="posts"
     )
-    category: Any = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL, related_name='post_category')
+    category: Any = models.ForeignKey(
+        Category,
+        null=True, default=1, blank=True,
+        on_delete=models.SET_DEFAULT,
+        related_name='post_category'
+    )
     title: str = models.CharField(max_length=250)
     description: str = models.TextField(null=True, blank=True)
     content: str = models.TextField(default="Create a post.")
