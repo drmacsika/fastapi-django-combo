@@ -8,7 +8,7 @@ from django.db.models.deletion import SET_NULL
 from django.urls import reverse
 from pydantic import AnyUrl, BaseModel, ValidationError, validator
 
-from blog.manager import CategoryManager
+from blog.manager import CategoryManager, PostManager
 
 
 def upload_image_path(
@@ -89,12 +89,12 @@ class Post(models.Model):
     updated: datetime = models.DateTimeField(auto_now=True, auto_now_add=False)
     created_on: datetime = models.DateTimeField(auto_now=False, auto_now_add=True)
     
-    # objects: PostManager = PostManager()
+    objects: PostManager = PostManager()
     
     class Meta:
         verbose_name: str = "post"
         verbose_name_plural: str = "posts"
-        ordering: list = ["-created_on", "-title"]
+        ordering: list = ["-updated", "-title"]
 
     def __repr__(self) -> str:
         return "<Post %r>" % self.title
