@@ -4,6 +4,7 @@ from typing import Any, Callable, List, Union
 
 from django.conf import settings
 from django.db import models
+from django.db.models.deletion import SET_NULL
 from django.urls import reverse
 from pydantic import AnyUrl
 
@@ -28,6 +29,12 @@ class Category(models.Model):
     title: str = models.CharField(max_length=200)
     description: str = models.CharField(max_length=200, blank=True, null=True)
     slug: str = models.SlugField(unique=True, blank=True)
+    parent: Union[str, int, list] = models.ForeignKey(
+        'self', 
+        blank=True, null=True, 
+        related_name='tags', 
+        on_delete=models.SET_NULL
+    )
     active: bool = models.BooleanField(default=False)
     updated: datetime = models.DateTimeField(auto_now=True, auto_now_add=False)
     created_on: datetime = models.DateTimeField(auto_now=False, auto_now_add=True)
@@ -57,10 +64,11 @@ class Post(models.Model):
     user: Any = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         default=1,
-        on_delete=models.CASCADE,
+        null=True,
+        on_delete=models.SET_NULL,
         related_name="posts"
     )
-    category: Union[str, int, list] = models.ManyToManyField(Category)
+    category: Any = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL, related_name='post_category')
     title: str = models.CharField(max_length=250)
     description: str = models.TextField(null=True, blank=True)
     content: str = models.TextField(default="Create a post.")
@@ -94,6 +102,11 @@ class Post(models.Model):
                                     datetime.now().second)
         if self.thumbnail and hasattr(self.thumbnail, 'url'):
             return "%s?enc=%s" % (self.thumbnail.url, timestamp)
+        
+        
+
+    
+
         
 
 # def posts_pre_save_receiver(sender, instance, *args, **kwargs):
