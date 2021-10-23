@@ -2,6 +2,17 @@
 This projects aims to combine FastAPI and Django to build a Production ready application capable of utilizing all of the features of both django and FastAPI.
 To demonstrate, I built a sample blog app, It can be adapted into any app.
 
+Table of Contents:
+- [Screenshots](#screenshots)
+- [Tools](#tools)
+- [Features](#features)
+- [Installation and Usage](#installation)
+- [Contributing](#contributing)
+- [Additional Info](#additional-info)
+
+
+## Screenshots
+
 ![Django Admin Page 1](https://github.com/drmacsika/fastapi-django-combo/blob/master/templates/Screenshot%202021-10-23%20at%2023.12.52.png)
 
 ![Django Admin Page 2](https://github.com/drmacsika/fastapi-django-combo/blob/master/templates/Screenshot%202021-10-23%20at%2023.13.05.png)
