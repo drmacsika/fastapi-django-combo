@@ -2,15 +2,14 @@
 This projects aims to combine FastAPI and Django to build a Production ready application capable of utilizing all of the features of both django and FastAPI.
 To demonstrate, I built a sample blog app, It can be adapted into any app.
 
-![Blog Posts](https://github.com/drmacsika/am-backend/blob/master/templates/Screenshot%202021-10-23%20at%2020.48.16.png)
+![Django Admin Page 1](https://github.com/drmacsika/fastapi-django-combo/blob/master/templates/Screenshot%202021-10-23%20at%2023.12.52.png)
 
-![Blog Category](https://github.com/drmacsika/am-backend/blob/master/templates/Screenshot%202021-10-23%20at%2020.48.28.png)
+![Django Admin Page 2](https://github.com/drmacsika/fastapi-django-combo/blob/master/templates/Screenshot%202021-10-23%20at%2023.13.05.png)
 
-![Contact](https://github.com/drmacsika/am-backend/blob/master/templates/Screenshot%202021-10-23%20at%2020.48.39.png)
+![Fastapi Blog endpoints 1](https://github.com/drmacsika/fastapi-django-combo/blob/master/templates/Screenshot%202021-10-23%20at%2023.13.42.png)
 
-![User Accounts](https://github.com/drmacsika/am-backend/blob/master/templates/Screenshot%202021-10-23%20at%2020.48.48.png)
+![Fastapi Blog endpoints 2](https://github.com/drmacsika/fastapi-django-combo/blob/master/templates/Screenshot%202021-10-23%20at%2023.13.51.png)
 
-![User Auth](https://github.com/drmacsika/am-backend/blob/master/templates/Screenshot%202021-10-23%20at%2020.48.57.png)
 
 ## Tools
 
