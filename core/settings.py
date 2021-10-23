@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # Custom Apps
     "blog",
     "accounts",
+    "contact",
 ]
 
 MIDDLEWARE = [
