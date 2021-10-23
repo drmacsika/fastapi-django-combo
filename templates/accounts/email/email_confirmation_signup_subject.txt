@@ -1,0 +1,1 @@
+{% include "accounts/email/email_confirmation_subject.txt" %}

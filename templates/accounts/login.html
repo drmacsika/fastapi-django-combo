@@ -1,0 +1,30 @@
+{% load custom_tags %}
+<h2>Log In from Accounts {{ request.path }}</h2>
+
+{% url "accounts:login" as login_url %}
+<form method="POST" action="{{ login_url }}?next={{request.path}}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form>
+
+<div>
+  <a href="{% url 'accounts:reset_password' %}">Log In</a>
+</div>
+
+
+ 
+{% comment %}
+{% load custom_tags %}
+<h2>Log In from Accounts {% url_path request.META.HTTP_REFERER %}</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="hidden" name="next" value="{% url_path request.META.HTTP_REFERER %}"/>
+  <button type="submit">Log In</button>
+</form>
+
+<div>
+  <a href="{% url 'accounts:reset_password' %}">Log In</a>
+</div>
+{% endcomment %}

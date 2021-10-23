@@ -1,0 +1,16 @@
+<div>
+  <p>Home Page</p>
+  <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+  </ul>
+  </div>
+
+{% if user.is_authenticated %}
+  Hi {{ user.email }}!
+  <p><a href="{% url 'accounts:logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'accounts:login' %}">Log In</a> |
+  <a href="{% url 'accounts:signup' %}">Sign Up</a>
+{% endif %}
