@@ -94,7 +94,7 @@ class Post(models.Model):
     class Meta:
         verbose_name: str = "post"
         verbose_name_plural: str = "posts"
-        ordering: list = ["-updated", "-title"]
+        ordering: list = ["-publish", "title"]
 
     def __repr__(self) -> str:
         return "<Post %r>" % self.title
