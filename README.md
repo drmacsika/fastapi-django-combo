@@ -1,2 +1,2 @@
-# fastapi-blog
-Production ready async endpoints blog built with FastAPI, Async SQLAlchemy, and Alembic.
+# FastAPI and Django
+This projects aims to combine FastAPI and Django to build a Production ready application.
