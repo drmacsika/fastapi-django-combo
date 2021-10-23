@@ -11,7 +11,7 @@ class Contact(models.Model):
     """
     firstname: str = models.CharField(max_length=100)
     lastname: str = models.CharField(max_length=100)
-    email: str = models.EmailField(unique=True, max_length=255)
+    email: str = models.EmailField(max_length=255)
     subject: str = models.CharField(max_length=255)
     message: str = models.TextField(max_length=2000)
     active: bool = models.BooleanField(default=False)
