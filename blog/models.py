@@ -4,11 +4,9 @@ from typing import Any, Callable, List, Union
 
 from django.conf import settings
 from django.db import models
-from django.db.models.deletion import SET_NULL
-from django.urls import reverse
-from pydantic import AnyUrl, BaseModel, ValidationError, validator
+from pydantic import AnyUrl
 
-from blog.manager import CategoryManager, PostManager
+from blog.managers import CategoryManager, PostManager
 
 
 def upload_image_path(
@@ -83,7 +81,7 @@ class Post(models.Model):
         null=True, blank=True, max_length=1000
     )
     draft: bool = models.BooleanField(default=False)
-    publish: datetime = models.DateField(auto_now=False, auto_now_add=False)
+    publish: date = models.DateField(auto_now=False, auto_now_add=False)
     read_time: int = models.IntegerField(default=0)
     view_count:int = models.PositiveIntegerField(default=0)
     updated: datetime = models.DateTimeField(auto_now=True, auto_now_add=False)
