@@ -12,8 +12,7 @@ from contact.schemas import ContactCreate
 class ContactCRUD(BaseCRUD[Contact, ContactCreate, ContactCreate, SLUGTYPE]):
     
     def create(self, obj_in: ContactCreate) -> Contact:
-        obj_in = jsonable_encoder(obj_in)
-        query = Category.objects.create(**obj_in)
-        return query
+        Contact.objects.create(**obj_in.dict())
+        return {"detail": "Message sent successfully!" }
     
 contact = ContactCRUD(Contact)
