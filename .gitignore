@@ -1,6 +1,7 @@
 #custom
 venv/*
 db.sqlite3
+static/
 
 venv/*
 db.sqlite3
