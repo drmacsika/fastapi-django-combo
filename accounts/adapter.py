@@ -34,7 +34,7 @@ class MyAccountAdapter(DefaultAccountAdapter):
             request, emailconfirmation)
         ctx = {
             "user": emailconfirmation.email_address.user,
-            "activate_url": "Yollo Yollo from accounts",
+            "activate_url": activate_url,
             "current_site": current_site,
             "key": emailconfirmation.key,
         }
@@ -52,7 +52,7 @@ class MyAccountAdapter(DefaultAccountAdapter):
             request, emailconfirmation)
         ctx = {
             "user": emailconfirmation.email_address.user,
-            "activate_url": "Yollo Yollo from accounts",
+            "activate_url": activate_url,
             "current_site": current_site,
             "key": emailconfirmation.key,
         }
