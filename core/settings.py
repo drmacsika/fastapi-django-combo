@@ -124,19 +124,20 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-
-STATIC_URL = '/static/'
+# Static files
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static", ]
-STATIC_ROOT = BASE_DIR.parent / "static_assets/static_root"
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.parent / "static_assets/media_root"
+STATIC_ROOT = BASE_DIR / "static"
+
+# Media files 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"  
 
 # Default primary key field type
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-PROJECT_NAME = "Macsika"
+PROJECT_NAME = "Archangel Macsika"
 
 ###### Custom settings ######
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

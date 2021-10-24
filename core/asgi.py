@@ -49,14 +49,7 @@ def get_application() -> FastAPI:
     app.mount(f"{settings.DRF_V1_STR}", WSGIMiddleware(application))
     
     # Set Up the static files and directory to serve django static files
-    app.mount('/static',
-        StaticFiles(
-            directory=os.path.normpath(
-                os.path.join(find_spec('django.contrib.admin').origin, '..', 'static')
-            )
-        ),
-        name='static',
-    )    
+    app.mount("/static", StaticFiles(directory="static"), name="static")  
     return app
 
 
