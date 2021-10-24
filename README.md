@@ -55,6 +55,8 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) for installation.
 - cd fastapi-django-combo
 - python manage.py makemigrations
 - python manage.py migrate
+- python manage.py collectstatic
+- python manage.py createsuperuser
 - uvicorn core.asgi:app --reload
 ```
 
