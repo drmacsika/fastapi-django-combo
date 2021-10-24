@@ -14,7 +14,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-API_V1_STR: str = "/api/v1"
+API_V1_STR: str = "/api/fa/v1"
+DRF_V1_STR: str = "/api/drf/v1"
+WSGI_APP_URL: str = "/web"
 AUTH_USER_MODEL = "accounts.CustomUser"
 
 # Application definition
