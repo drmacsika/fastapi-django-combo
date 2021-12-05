@@ -8,7 +8,7 @@ To demonstrate, I built a sample blog app, It can be adapted into any app.
 - [Features](#features)
 - [Installation and Usage](#installation)
 - [Contributing](#contributing)
-- [Additional Info](#additional-info)
+- [Contact Info](#contact-info)
 
 
 ## Screenshots
@@ -65,4 +65,8 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) for installation.
 Pull requests and contributions are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Ensure to follow the [guidelines](https://github.com/drmacsika/fastapi-django-combo/blob/master/CONTRIBUTING.md) and update tests as appropriate.
+
+## Contact Info
+If you have any question or want to reach me directly, 
+[Contact Nsikak Imoh](https://nsikakimoh.com).
 
