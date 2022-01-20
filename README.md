@@ -7,9 +7,9 @@ To demonstrate, I built a sample blog app, It can be adapted into any app.
 - [Tools](#tools)
 - [Features](#features)
 - [Installation and Usage](#installation)
+- [Tutorial](#tutorial)
 - [Contributing](#contributing)
 - [Contact Info](#contact-info)
-
 
 ## Screenshots
 
@@ -59,6 +59,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) for installation.
 - python manage.py createsuperuser
 - uvicorn core.asgi:app --reload
 ```
+
+## Tutorial:
+- **Tutorial 1**: *[How to use FastAPI with Django ORM and Admin](https://nsikakimoh.com/learn/django-and-fastapi-combo-tutorials)*
 
 ## Contributing
 
